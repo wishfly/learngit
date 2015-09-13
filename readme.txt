@@ -1,2 +1,7 @@
-readme edit on master1 depend on master
+<<<<<<< HEAD
+readme edit on master3 depend on master 
 
+=======
+readme me dev1
+>>>>>>> dev
+ 
