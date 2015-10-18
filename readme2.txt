@@ -1,1 +1,1 @@
-learngit2下的目录
+2015年10月18:learngit下的readme2.txt

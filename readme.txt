@@ -1,1 +1,1 @@
-learngit下的：readme me devStard dev
+2015年10月18:learngit下的readme.txt
