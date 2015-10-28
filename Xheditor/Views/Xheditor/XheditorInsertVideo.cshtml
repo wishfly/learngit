@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+<script>
+    var dreamVar = {
+    };
+</script>
+<link href="~/xheditor/extracss.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/xheditor/xheditor-1.1.14-zh-cn.min.js"></script>
+<script src="~/xheditor/myxheditor.js"></script>
+
+<form action="@Url.Action("XheditorInsertVideoVerify")" name="form" class="verify" method="post">
+    <table class="table table-bordered tablest modify">
+        <tbody>
+            <tr>
+                <td>内容：</td>
+                <td>
+                    <div class="xheditor_div">
+                        <textarea class="content editor" name='content'></textarea>
+                    </div>
+                </td>
+                
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="bottom_button">
+                        <button type="submit" class="btn btn-info"><i class="icon-ok icon-white"></i>确认</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</form>
+
+

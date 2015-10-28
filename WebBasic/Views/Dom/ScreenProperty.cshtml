@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Window的Screen对象";
+}
+<style type="text/css">
+    body {
+        height: 2800px;
+    }
+
+    table {
+        border: solid #add9c0;
+        border-width: 1px 0px 0px 1px;
+        /*margin: auto;*/
+    }
+
+    tr {
+        border: 1px solid #0094ff;
+        margin: 0px;
+        padding: 0px;
+        border-collapse: collapse;
+        border-width: 0px;
+        height: 10px;
+    }
+
+    td {
+        border: solid #add9c0;
+        border-width: 0px 1px 1px 0px;
+        padding: 10px 0px;
+        height: 10px;
+    }
+
+        td:first-child {
+            /*width: 300px;*/
+            text-align: center;
+        }
+
+        td:last-child {
+            /*width: 100px;*/
+            text-align: center;
+        }
+</style>
+<h4 style="text-align:center">改变浏览器大小测试Screen和Window对象的属性</h4>
+<table>
+    <tr>
+        <td>属性</td>
+        <td>属性值</td>
+    </tr>
+    <tr>
+        <td>screen.Width/screen.Height</>
+        <td id="screenHeightWidth"></td>
+    </tr>
+    <tr>
+        <td>screen.availWidth/screen.availHeight</>
+        <td id="screenAvailWidthHeight"></td>
+    </tr>
+    <tr>
+        <td>window.InnerWidth/window.InnerHeight</>
+        <td id="windowInnerWidthHeight"></td>
+    </tr>
+    <tr>
+        <td>window.OuterWidth/window.OuterHeight</>
+        <td id="windowOuterWidthHeight"></td>
+    </tr>
+    <tr>
+        <td>window.pageXOffset/window.pageYOffset</>
+        <td id="windowpageXYOffset"></td>
+    </tr>
+    <tr>
+        <td>document.documentElement.clientWidth/clientHeight</>
+        <td id="documentdocumentElementclientWidthHeight"></td>
+    </tr>
+    <tr>
+        <td>document.documentElement.offsetWidth/offsetHeight</>
+        <td id="documentdocumentElementoffsetWidthHeight"></td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    window.onload = changeProperty;
+    window.onresize = function () {
+        changeProperty();
+    }
+    window.onscroll = function () {
+        changeProperty();
+    }
+    function changeProperty() {
+        $("#screenHeightWidth").html(screen.width + "px/" + screen.height + "px");
+        $("#screenAvailWidthHeight").html(screen.availWidth + "px/" + screen.availHeight + "px");
+
+        $("#windowInnerWidthHeight").html(window.innerWidth + "px/" + window.innerHeight + "px");
+        $("#windowOuterWidthHeight").html(window.outerWidth + "px/" + window.outerHeight + "px");
+        $("#windowpageXYOffset").html(window.pageXOffset + "px/" + window.pageYOffset + "px");
+        $("#documentdocumentElementclientWidthHeight").html(document.documentElement.clientWidth + "px/" + document.documentElement.clientHeight + "px");
+        $("#documentdocumentElementoffsetWidthHeight").html(document.documentElement.offsetWidth + "px/" + document.documentElement.offsetHeight + "px");
+
+    }
+</script>

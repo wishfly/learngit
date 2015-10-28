@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebVideoPlay(视频播放)", "WebVideoPlay\WebVideoPlay(视频播放).csproj", "{7BC0CDF7-783F-41E0-BF74-5584B93191DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFileUpload(文件上传)", "WebFileUpload\WebFileUpload(文件上传).csproj", "{26FE2C07-AED0-4C4F-8DEF-8A1548183A56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xheditor(富文本)", "Xheditor\Xheditor(富文本).csproj", "{C3E5605D-ABCC-4EB6-B963-A4CC4F82333A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBasic", "WebBasic\WebBasic.csproj", "{295F323B-AB2E-4A46-9A77-0C0E9155A7F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zTree(JQuery树控件)", "zTree(JQuery数控件)\zTree(JQuery树控件).csproj", "{A28CEC07-E653-413C-83C6-0727C2B60E54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BC0CDF7-783F-41E0-BF74-5584B93191DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC0CDF7-783F-41E0-BF74-5584B93191DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC0CDF7-783F-41E0-BF74-5584B93191DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC0CDF7-783F-41E0-BF74-5584B93191DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FE2C07-AED0-4C4F-8DEF-8A1548183A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FE2C07-AED0-4C4F-8DEF-8A1548183A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FE2C07-AED0-4C4F-8DEF-8A1548183A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FE2C07-AED0-4C4F-8DEF-8A1548183A56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E5605D-ABCC-4EB6-B963-A4CC4F82333A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E5605D-ABCC-4EB6-B963-A4CC4F82333A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E5605D-ABCC-4EB6-B963-A4CC4F82333A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E5605D-ABCC-4EB6-B963-A4CC4F82333A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295F323B-AB2E-4A46-9A77-0C0E9155A7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295F323B-AB2E-4A46-9A77-0C0E9155A7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295F323B-AB2E-4A46-9A77-0C0E9155A7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295F323B-AB2E-4A46-9A77-0C0E9155A7F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28CEC07-E653-413C-83C6-0727C2B60E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28CEC07-E653-413C-83C6-0727C2B60E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28CEC07-E653-413C-83C6-0727C2B60E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28CEC07-E653-413C-83C6-0727C2B60E54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

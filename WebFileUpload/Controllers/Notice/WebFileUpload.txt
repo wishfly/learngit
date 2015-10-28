@@ -1,0 +1,14 @@
+﻿1 上传前文件大小限制： Asp.net默认对文件大小进行了限制，所以需要再web.config中进行设置
+<system.web>
+        <!--maxRequestLength:800MB,单位为KByte-->
+		<!--executionTimeout:此处为60分钟,最大执行时间,时间单位为秒-->
+		<httpRuntime  maxRequestLength="819200" executionTimeout="3600" />
+</system.web>
+<system.webServer>
+		<security>
+			<requestFiltering>
+				<!--800MB，单位为Byte-->
+				<requestLimits maxAllowedContentLength="819200000" />
+			</requestFiltering>
+		</security>
+</system.webServer>

@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <title>indexl.html</title>
+</head>
+<body>
+    <div class="dt_video w100">
+        <script src="/video/jwplayer.js" type="text/javascript">
+        </script>
+        <div align="center" id="mediaspace">
+        </div>
+        <script type="text/javascript">
+            jwplayer('mediaspace').setup({
+                'flashplayer': '/video/player.swf',
+                'file': 'http://210.21.67.93:81/CGWANG-2014-yinianlicheng.mp4',//视频网址
+                'image': 'http://gz.zai3d.com/Public/share/images/school_works/p19kjgbi7f1mbd1fdss861bpl1pet5.jpg',//图片网址
+                'backcolor': '0x333333',
+                'frontcolor': '0xaaaaaa',
+                'lightcolor': '0xeeeeee',
+                'controlbar': 'over',
+                'dock': 'false',
+                'autostart': 'false',
+                'repeat': 'always',
+                'stretching': 'uniform',//fill适中,uniform默认
+                'width': '1000',//视频播放宽度
+                'height': '576'//视频播放高度
+            });
+        </script>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "上传UI";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>上传界面</title>
+    <!--jquery plug-->
+    <script src="~/Plug/jquery/jquery-1.8.2.min.js"></script>
+    <!--jquery ui-->
+    <script src="~/Plug/jqueryui/jquery-ui.min.js"></script>
+    <link href="~/Plug/jqueryui/jquery-ui.css" rel="stylesheet" />
+    <!--plupload plug-->
+    <script src="~/Plug/webfileupload/js/plupload.js"></script>
+    <link href="~/Plug/webfileupload/js/jquery.ui.plupload/css/jquery.ui.plupload.css" rel="stylesheet" /><!--样式-->
+    <script src="~/Plug/webfileupload/js/jquery.ui.plupload/jquery.ui.plupload.js"></script>
+    <!--i18n-->
+    <script src="~/Plug/webfileupload/js/i18n/zh-cn.js"></script>
+    <!--内核-->
+    <script src="~/Plug/webfileupload/js/plupload.html5.js"></script>
+    <script src="~/Plug/webfileupload/js/plupload.flash.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        // Convert divs to queue widgets when the DOM is ready
+        $(function () {
+            $("#uploader").plupload({
+                // General settings
+                runtimes: 'html5,flash,browserplus,silverlight,gears,html4',
+                //url: '/admin/photos/pluploadSave/item-config/table-/idid-/',
+                //url: '/admin/backcommon/uploadphotosave/123',
+                url: '@Url.Action("uploadsave", "webfileupload", new { item = ViewBag.item })',
+                max_file_size: '1000mb',//最大文件尺寸
+                chunk_size: '20mb',//分块(当上传文件大于服务器接收端文件大小限制的时候，可以分多次请求发给服务器，如果不需要从设置中移出)
+                unique_names: true,
+                //multiple_queues : true,//是否可以多次上传,默认true
+                //multi_selection: false,//false:单文件上传 true:多文件上传(默认)
+                //dragdrop:false,//是否支持拖拽
+                //rename: true,//重命名
+                // Sort files
+                sortable: true,
+                // Resize images on clientside if we can
+                //resize : {width : 1920, height : 1920, quality : 97},
+                // Specify what files to browse for
+                filters: [
+                    { title: 'Image files', extensions: 'jpg,gif,png' },
+                    { video: 'Video files', extensions: 'mp4' },
+                ],
+                // Flash settings
+                flash_swf_url: '~/Plug/webfileupload/js/plupload.flash.swf',
+                // Silverlight settings
+                silverlight_xap_url: '~/Plug/webfileupload/js/plupload.silverlight.xap',
+                // PreInit events, bound before any internal events
+                preinit: {
+                    Init: function (up, info) {
+                        log('[Init]', 'Info:', info, 'Features:', up.features);
+                    },
+                    UploadFile: function (up, file) {
+                        log('[UploadFile]', file);
+                    }
+                },
+                init: {
+                    Refresh: function (up) {
+                        // Called when upload shim is moved
+                        log('[Refresh]');
+                    },
+                    StateChanged: function (up) {
+                        if (up.state == plupload.STOPPED) {
+                            parent.document.location.reload(); //上传后自动刷新
+                            parent.$.fn.colorbox.close();
+                        }
+                        log('[StateChanged]', up.state == plupload.STARTED ? "STARTED" : "STOPPED");
+                    },
+                    QueueChanged: function (up) {
+                        // Called when the files in queue are changed by adding/removing files
+                        log('[QueueChanged]');
+                    },
+                    UploadProgress: function (up, file) {
+                        // Called while a file is being uploaded
+                        log('[UploadProgress]', 'File:', file, "Total:", up.total);
+                    },
+                    FilesAdded: function (up, files) {
+                        // Callced when files are added to queue
+                        log('[FilesAdded]');
+
+                        plupload.each(files, function (file) {
+                            log('  File:', file);
+                        });
+                    },
+                    FilesRemoved: function (up, files) {
+                        // Called when files where removed from queue
+                        log('[FilesRemoved]');
+
+                        plupload.each(files, function (file) {
+                            log('  File:', file);
+                        });
+                    },
+                    FileUploaded: function (up, file, info) {
+                        // Called when a file has finished uploading
+                        log('[FileUploaded] File:', file, "Info:", info);
+                    },
+                    ChunkUploaded: function (up, file, info) {
+                        // Called when a file chunk has finished uploading
+                        log('[ChunkUploaded] File:', file, "Info:", info);
+                    },
+                    Error: function (up, args) {
+                        // Called when a error has occured
+                        log('[error] ', args);
+                    }
+                }
+            });
+            /*
+            // Client side form validation
+            $('form').submit(function(e) {
+                var uploader = $('#uploader').pluploadQueue();
+                // Files in queue upload them first
+                if (uploader.files.length > 0) {
+                    // When all files are uploaded submit form
+                    uploader.bind('StateChanged', function() {
+                        if (uploader.files.length === (uploader.total.uploaded + uploader.total.failed)) {
+                            $('form')[0].submit();
+                        }
+                    });
+                    uploader.start();
+                } else {
+                    alert('You must queue at least one file.');
+                }
+                return false;
+            });
+            */
+
+            //zhao
+            $('#uploader_container').attr('title', '');//不要title提示
+
+        });
+    </script>
+    <script>
+        function log() {
+        }
+    </script>
+    <div id="uploader">
+        <p>You browser doesn't have Flash, Silverlight, Gears, BrowserPlus or HTML5 support.</p>
+    </div>
+    <style>
+        .plupload_scroll {
+            max-height: 168px;
+        }
+    </style>
+</body>
+</html>

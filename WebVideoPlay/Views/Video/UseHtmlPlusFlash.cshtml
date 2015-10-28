@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>视频播放</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <script src="~/Scripts/jquery-1.8.2.js"></script>
+        <script src="~/video/videojs.js"></script>
+        <div id="a1"></div>
+        <div style="clear:both"></div>
+        <script type="text/javascript">
+            //string video = "['" + (string)Model.jobjparam["video"] + "']";//var video = ['http://192.168.1.199/Videos/youxitexiao-songpin01.mp4'];
+            var video = ['http://210.21.67.93:81/zhouludongzuo-2.mp4'];
+            var video = '/Media/videotest.mp4';
+            if (window.innerWidth <= 480) {
+                SuveePlayer.embed('/video/flvplayer.swf', 'a1', 'videoid', innerWidth, (innerWidth - 10) * 0.66, true, video, video, '/Media/456.jpeg');
+            }
+            else {
+                SuveePlayer.embed('/video/flvplayer.swf', 'a1', 'videoid', 1000, 600, true, video, video, '/Media/456.jpeg');
+            }
+        </script>
+    </div>
+</body>
+</html>
+
+<div class="dt_video">
+    <script type="text/javascript" src="/Public/home/js/jwplayer.js"></script>
+    <div id="mediaspace" align="center">
+    </div>
+    <script type="text/javascript">
+        jwplayer('mediaspace').setup({
+            'flashplayer': '/Public/home/images/player.swf',
+            'file': 'http://192.168.1.199:81/8zhounian.mp4',//视频网址（如果是优酷的看下面的教程）
+            'image': '/Public/share/images/xueyuandetail/p19ltmomfa1jeg1c3p1rcrvag1rcf5.jpg',//缩略图图片地址
+            'backcolor': '0x333333',
+            'frontcolor': '0xaaaaaa',
+            'lightcolor': '0xeeeeee',
+            'controlbar': 'over',
+            'dock': 'false',
+            'autostart': 'false',
+            'repeat': 'always',
+            'stretching': 'uniform',//fill适中,uniform默认
+            'width': '1000',//视频播放宽度
+            'height': '600'//视频播放高度
+        });
+    </script>
+</div>                                    
